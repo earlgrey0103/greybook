@@ -4,6 +4,7 @@ import { clsxm } from '@zolplay/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import logo from 'public/apple-icon.png'
 
 import {
   DashboardIcon,
@@ -12,8 +13,6 @@ import {
   SubscriberIcon,
   TiltedSendIcon,
 } from '~/assets'
-
-import logo from './../apple-icon.png'
 
 const navigation = [
   { name: '仪表盘', href: '', icon: DashboardIcon },
