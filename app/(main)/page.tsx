@@ -1,10 +1,8 @@
 import React from 'react'
 
-import { BlogPosts } from '~/app/(main)/blog/BlogPosts'
 import { Headline } from '~/app/(main)/_components/Headline'
-import { Newsletter } from '~/app/(main)/_components/Newsletter'
-import { Photos } from '~/app/(main)/_components/Photos'
 import { Resume } from '~/app/(main)/_components/Resume'
+import { BlogPosts } from '~/app/(main)/blog/BlogPosts'
 import { PencilSwooshIcon } from '~/assets'
 import { Container } from '~/components/ui/Container'
 import { getSettings } from '~/sanity/queries'
@@ -28,7 +26,6 @@ export default async function BlogHomePage() {
             <BlogPosts />
           </div>
           <aside className="space-y-10 lg:sticky lg:top-8 lg:h-fit lg:pl-16 xl:pl-20">
-            
             {settings.resume && <Resume resume={settings.resume} />}
           </aside>
         </div>
