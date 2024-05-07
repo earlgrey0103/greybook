@@ -88,34 +88,7 @@ export function BlogPostPage({
                   fill
                 />
               </motion.div>
-              <motion.div
-                className="flex w-full items-center space-x-4 text-sm font-medium text-zinc-600/80 dark:text-zinc-400/80"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.15,
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 20,
-                  delay: 0.1,
-                }}
-              >
-                <time
-                  dateTime={post.publishedAt}
-                  className="flex items-center space-x-1.5"
-                >
-                  <CalendarIcon />
-                  <span>
-                    {parseDateTime({
-                      date: new Date(post.publishedAt),
-                    })?.format('YYYY/MM/DD')}
-                  </span>
-                </time>
-                <span className="inline-flex items-center space-x-1.5">
-                  <ScriptIcon />
-                  <span>{post.categories?.join(', ')}</span>
-                </span>
-              </motion.div>
+
               <motion.h1
                 className="mt-6 w-full text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
                 initial={{ opacity: 0, y: 8 }}
@@ -142,8 +115,9 @@ export function BlogPostPage({
                   delay: 0.23,
                 }}
               >
-                {post.description}
+                摘要：{post.description}
               </motion.p>
+              
               <motion.div
                 className="flex w-full items-center space-x-4 text-sm font-medium text-zinc-700/50 dark:text-zinc-300/50"
                 initial={{ opacity: 0, y: 5 }}
@@ -156,6 +130,21 @@ export function BlogPostPage({
                   delay: 0.255,
                 }}
               >
+                <time
+                  dateTime={post.publishedAt}
+                  className="flex items-center space-x-1.5"
+                >
+                  <CalendarIcon />
+                  <span>
+                    {parseDateTime({
+                      date: new Date(post.publishedAt),
+                    })?.format('YYYY/MM/DD')}
+                  </span>
+                </time>
+                <span className="inline-flex items-center space-x-1.5">
+                  <ScriptIcon />
+                  <span>{post.categories?.join(', ')}</span>
+                </span>
                 <span
                   className="inline-flex items-center space-x-1.5"
                   title={views?.toString()}

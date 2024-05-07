@@ -17,7 +17,7 @@ import {
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
-import { NavigationBar } from '~/app/(main)/NavigationBar'
+import { NavigationBar } from '~/app/(main)/_components/NavigationBar'
 import { ThemeSwitcher } from '~/app/(main)/ThemeSwitcher'
 import {
   GitHubBrandIcon,
@@ -266,7 +266,7 @@ export function Header() {
                   )}
                 </AnimatePresence>
               </motion.div>
-              <div className="flex flex-1 justify-end md:justify-center">
+              <div className="flex justify-end md:justify-center">
                 <NavigationBar.Mobile className="pointer-events-auto relative z-50 md:hidden" />
                 <NavigationBar.Desktop className="pointer-events-auto relative z-50 hidden md:block" />
               </div>
